@@ -1,10 +1,10 @@
-package com.hayet.models;
+package com.YinPulse.models;
 
 /**
  * Classe Parcours - Your Journey (7 etapes)
  * Responsable : Chaima (Product Owner + Dev)
  * Fonctionnalite : US-01, US-02 (etendue au parcours patient complet)
- * Modelise le parcours de soin continu de Hayet de A a Z
+ * Modelise le parcours de soin continu de YinPulse de A a Z
  */
 public class Parcours {
 
@@ -127,7 +127,7 @@ public class Parcours {
      */
     public void afficherParcours() {
         System.out.println("  +=======================================+");
-        System.out.println("  |    PARCOURS HAYET #" + id
+        System.out.println("  |    PARCOURS YinPulse #" + id
                            + " - " + nomPatient + "    ");
         System.out.println("  +=======================================+");
         System.out.println("  Chirurgie  : " + typeChirurgie);

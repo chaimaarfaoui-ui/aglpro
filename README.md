@@ -13,19 +13,19 @@ Elle met en relation des patients internationaux avec des chirurgiens tunisiens 
 **Problème résolu :** Trouver un chirurgien qualifié en Tunisie, organiser son séjour médical et sa retraite de convalescence — sans jongler entre 10 intermédiaires.  
 **Cible :** Patients européens & tunisiens, Médecins spécialistes, Administrateurs de la plateforme.
 
-**Inspiration :** [hayetjdida.vercel.app](https://hayetjdida.vercel.app)
+**Inspiration :** [YinPulsejdida.vercel.app](https://YinPulsejdida.vercel.app)
 
 ---
 
 ## Équipe
 
-| Membre | Rôle Scrum | Fonctionnalité | Branche Git |
-|--------|-----------|----------------|-------------|
-| Chaima | Product Owner + Dev | Authentification & Inscription | `feature/authentification` |
-| Farah | Scrum Master + Dev | Recherche & Filtrage des Services | `feature/recherche-services` |
-| Malek | Développeur | Profil Médecin & Équipe | `feature/profil-medecin` |
-| Eya | Développeur | Avis & Notation | `feature/notation-avis` |
-| Maram | Développeur | Tableau de Bord Admin | `feature/admin-dashboard` |
+| Membre | Rôle Scrum          | Fonctionnalité                    | Branche Git                  |
+| ------ | ------------------- | --------------------------------- | ---------------------------- |
+| Chaima | Product Owner + Dev | Authentification & Inscription    | `feature/authentification`   |
+| Farah  | Scrum Master + Dev  | Recherche & Filtrage des Services | `feature/recherche-services` |
+| Malek  | Développeur         | Profil Médecin & Équipe           | `feature/profil-medecin`     |
+| Eya    | Développeur         | Avis & Notation                   | `feature/notation-avis`      |
+| Maram  | Développeur         | Tableau de Bord Admin             | `feature/admin-dashboard`    |
 
 ---
 
@@ -41,7 +41,7 @@ Elle met en relation des patients internationaux avec des chirurgiens tunisiens 
 ## Structure du projet
 
 ```
-Hayet/
+YinPulse/
 ├── README.md
 ├── docs/
 │   ├── rapport.pdf              ← Rapport final (L7)
@@ -50,12 +50,12 @@ Hayet/
 │       ├── kanban/              ← Captures Kanban
 │       └── reviews/             ← Captures PR reviews
 ├── diagrammes/
-│   ├── DCU_Hayet.puml           ← Diagramme de Cas d'Utilisation
-│   ├── DC_Hayet.puml            ← Diagramme de Classes
-│   ├── DS_Hayet_Sprint1.puml    ← Diagramme de Séquence Sprint 1
-│   └── DS_Hayet_Sprint2.puml    ← Diagramme de Séquence Sprint 2
+│   ├── DCU_YinPulse.puml           ← Diagramme de Cas d'Utilisation
+│   ├── DC_YinPulse.puml            ← Diagramme de Classes
+│   ├── DS_YinPulse_Sprint1.puml    ← Diagramme de Séquence Sprint 1
+│   └── DS_YinPulse_Sprint2.puml    ← Diagramme de Séquence Sprint 2
 └── src/
-    └── com/hayet/models/
+    └── com/YinPulse/models/
         ├── Main.java            ← Point d'entrée — démo Sprint 2
         ├── Utilisateur.java     ← Chaima (US-01, US-02)
         ├── Service.java         ← Farah (US-03, US-04)
@@ -71,24 +71,24 @@ Hayet/
 
 ```bash
 # Compiler
-javac -encoding UTF-8 -d out src/com/hayet/models/*.java
+javac -encoding UTF-8 -d out src/com/YinPulse/models/*.java
 
 # Exécuter
-java -cp out com.hayet.models.Main
+java -cp out com.YinPulse.models.Main
 ```
 
 ---
 
 ## Classes Java
 
-| Classe | Responsable | Héritage/Relations | User Stories |
-|--------|------------|-------------------|--------------|
-| `Utilisateur` | Chaima | — | US-01, US-02 |
-| `Service` | Farah | — | US-03, US-04 |
-| `Medecin` | Malek | — | US-05, US-06 |
-| `Avis` | Eya | — | US-07, US-08 |
-| `Admin` | Maram | `extends Utilisateur` | US-09, US-10 |
-| `Consultation` | Commune | — | US-14, US-15 |
+| Classe         | Responsable | Héritage/Relations    | User Stories |
+| -------------- | ----------- | --------------------- | ------------ |
+| `Utilisateur`  | Chaima      | —                     | US-01, US-02 |
+| `Service`      | Farah       | —                     | US-03, US-04 |
+| `Medecin`      | Malek       | —                     | US-05, US-06 |
+| `Avis`         | Eya         | —                     | US-07, US-08 |
+| `Admin`        | Maram       | `extends Utilisateur` | US-09, US-10 |
+| `Consultation` | Commune     | —                     | US-14, US-15 |
 
 ---
 

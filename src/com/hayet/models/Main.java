@@ -1,25 +1,25 @@
-package com.hayet.models;
+package com.YinPulse.models;
 
 /**
- * HAYET - Plateforme de Tourisme Medical & Bien-etre
+ * YinPulse - Plateforme de Tourisme Medical & Bien-etre
  * Main.java V2 - Sprint 2 - Demo Finale Complete
  *
- * Equipe Hayet - FSEGT, Universite Tunis El Manar - AGL 2025/2026
+ * Equipe YinPulse - FSEGT, Universite Tunis El Manar - AGL 2025/2026
  *   Chaima  - Product Owner + Dev  - Authentification & Parcours
  *   Farah   - Scrum Master + Dev   - Recherche, Services & Retraites
  *   Malek   - Developpeur          - Profil Medecin & Hotels
  *   Eya     - Developpeur          - Avis & Notation
  *   Maram   - Developpeur          - Tableau de Bord Admin
  *
- * Compilation : javac -encoding UTF-8 -d out src/com/hayet/models/*.java
- * Execution   : java -cp out com.hayet.models.Main
+ * Compilation : javac -encoding UTF-8 -d out src/com/YinPulse/models/*.java
+ * Execution   : java -cp out com.YinPulse.models.Main
  */
 public class Main {
 
     public static void main(String[] args) {
 
         sep("=", 64);
-        System.out.println("    HAYET - Plateforme de Tourisme Medical & Bien-etre");
+        System.out.println("    YinPulse - Plateforme de Tourisme Medical & Bien-etre");
         System.out.println("    Restore. Rebuild. Renew.");
         System.out.println("    Sprint 2 - 9 classes - 7 scenarios complets");
         sep("=", 64);
@@ -30,19 +30,19 @@ public class Main {
 
         // Medecins
         Medecin dr1 = new Medecin(1,"Helali","Hayathem",
-            "Reconstruction Maxillo-Faciale","dr.helali@hayet.tn",
+            "Reconstruction Maxillo-Faciale","dr.helali@YinPulse.tn",
             "+216 71 123 456","Clinique Pasteur, El Menzah","Tunis",
             2200.0,15,"Doctorat - Paris & FMST");
         dr1.setNoteMoyenne(4.8); dr1.setNombreConsultations(312);
 
         Medecin dr2 = new Medecin(2,"Fodha","Haifa",
-            "Chirurgie Plastique","dr.fodha@hayet.tn",
+            "Chirurgie Plastique","dr.fodha@YinPulse.tn",
             "+216 71 456 789","Clinique Le Bardo","Tunis",
             1900.0,12,"Doctorat - Monastir & Belgique");
         dr2.setNoteMoyenne(4.6); dr2.setNombreConsultations(198);
 
         Medecin dr3 = new Medecin(3,"Jalloul","Aymen",
-            "Greffe Capillaire FUE/DHI","dr.jalloul@hayet.tn",
+            "Greffe Capillaire FUE/DHI","dr.jalloul@YinPulse.tn",
             "+216 71 789 012","Clinique Pasteur","Tunis",
             1600.0,10,"Specialiste FUE/DHI");
         dr3.setNoteMoyenne(4.9); dr3.setNombreConsultations(420);
@@ -80,7 +80,7 @@ public class Main {
         r3.setNoteMoyenne(4.7);
 
         // Hotels
-        Hotel h1 = new Hotel(1,"Dar Hayet","Maison d'Hotes",
+        Hotel h1 = new Hotel(1,"Dar YinPulse","Maison d'Hotes",
             "Hammamet","Quartier Medina, Hammamet",
             90.0,4,"Petit-dejeuner inclus",true,true,false,
             new String[]{"Cour jasmin","Menu post-op","Massage lymphatique"});
@@ -112,7 +112,7 @@ public class Main {
 
         // Admin
         Admin admin = new Admin(99,"Bouazizi","Mariem",
-            "admin@hayet.tn","Admin@Secure2","+216 71 999 000",2);
+            "admin@YinPulse.tn","Admin@Secure2","+216 71 999 000",2);
         admin.ajouterMedecin(dr1); admin.ajouterMedecin(dr2); admin.ajouterMedecin(dr3);
         admin.ajouterService(s1);  admin.ajouterService(s2);
         admin.ajouterService(s3);  admin.ajouterService(s4);
@@ -188,7 +188,7 @@ public class Main {
         section("SCENARIO 4","Selection hotel partenaire Stay & Restore");
 
         Hotel[] hotels = {h1,h2,h3,h4,h5};
-        System.out.println("  Tous les hotels partenaires Hayet :");
+        System.out.println("  Tous les hotels partenaires YinPulse :");
         for (Hotel h : hotels) h.afficherCourt();
 
         System.out.println();

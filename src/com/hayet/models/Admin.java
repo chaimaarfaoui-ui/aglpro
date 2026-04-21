@@ -1,4 +1,4 @@
-package com.hayet.models;
+package com.YinPulse.models;
 
 /**
  * Classe Admin - Tableau de Bord Administrateur
@@ -42,7 +42,7 @@ public class Admin extends Utilisateur {
     /** US-09 : Afficher le tableau de bord */
     public void afficherTableauDeBord() {
         System.out.println("  +==================================+");
-        System.out.println("  |     TABLEAU DE BORD - HAYET      |");
+        System.out.println("  |     TABLEAU DE BORD - YinPulse      |");
         System.out.println("  +==================================+");
         System.out.println("  Admin        : " + getPrenom() + " " + getNom()
                            + " (Niveau " + niveauAcces + ")");

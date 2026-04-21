@@ -1,4 +1,4 @@
-@startuml DC_Hayet
+@startuml DC_YinPulse
 !theme plain
 skinparam classBackgroundColor #f0f5fa
 skinparam classBorderColor #2c5f8a
@@ -7,7 +7,7 @@ skinparam ArrowColor #1a3a5c
 skinparam defaultFontName Arial
 skinparam defaultFontSize 11
 
-title Diagramme de Classes — Hayet\nPlateforme de Tourisme Médical & Bien-être
+title Diagramme de Classes — YinPulse\nPlateforme de Tourisme Médical & Bien-être
 
 ' ─── Utilisateur (Chaima) ───────────────────────────────────────
 class Utilisateur {

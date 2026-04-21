@@ -1,4 +1,4 @@
-@startuml DCU_Hayet
+@startuml DCU_YinPulse
 !theme plain
 skinparam actorStyle awesome
 skinparam packageStyle rectangle
@@ -9,7 +9,7 @@ skinparam ActorBorderColor #1a3a5c
 skinparam defaultFontName Arial
 skinparam defaultFontSize 12
 
-title Diagramme de Cas d'Utilisation — Hayet\nPlateforme de Tourisme Médical & Bien-être
+title Diagramme de Cas d'Utilisation — YinPulse\nPlateforme de Tourisme Médical & Bien-être
 
 left to right direction
 
@@ -21,7 +21,7 @@ actor "Admin" as A
 P --|> V
 A --|> P
 
-rectangle "Hayet — Système" {
+rectangle "YinPulse — Système" {
 
   ' Visiteur
   usecase "US-00 : Consulter l'accueil" as UC00

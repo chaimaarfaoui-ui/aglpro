@@ -1,10 +1,10 @@
-package com.hayet.models;
+package com.YinPulse.models;
 
 /**
  * Classe Hotel - Stay & Restore
  * Responsable : Malek (Developpeur)
  * Fonctionnalite : US-05, US-06 (etendue aux hebergements partenaires)
- * Hotels et maisons d'hotes partenaires Hayet
+ * Hotels et maisons d'hotes partenaires YinPulse
  */
 public class Hotel {
 
@@ -16,7 +16,7 @@ public class Hotel {
     private String adresse;
     private double prixParNuit;    // en DT
     private int nombreEtoiles;     // 1 a 5
-    private boolean partenaireHayet;
+    private boolean partenaireYinPulse;
     private boolean menuPostOperatoire;
     private boolean accesPlage;
     private boolean piscine;
@@ -27,7 +27,7 @@ public class Hotel {
 
     // --- Constructeur vide ----------------------------------------
     public Hotel() {
-        this.partenaireHayet = true;
+        this.partenaireYinPulse = true;
         this.disponible = true;
         this.noteMoyenne = 0.0;
     }
@@ -49,7 +49,7 @@ public class Hotel {
         this.accesPlage = accesPlage;
         this.piscine = piscine;
         this.equipements = equipements;
-        this.partenaireHayet = true;
+        this.partenaireYinPulse = true;
         this.disponible = true;
         this.noteMoyenne = 0.0;
     }
@@ -84,7 +84,7 @@ public class Hotel {
      * Verifier si adapte a la recuperation post-chirurgie
      */
     public boolean estAdaptePostOperatoire() {
-        return this.partenaireHayet && this.menuPostOperatoire;
+        return this.partenaireYinPulse && this.menuPostOperatoire;
     }
 
     /**
@@ -132,7 +132,7 @@ public class Hotel {
             }
         }
         System.out.println();
-        System.out.println("  +  Partenaire Hayet : " + (partenaireHayet ? "[OK]" : "Non"));
+        System.out.println("  +  Partenaire YinPulse : " + (partenaireYinPulse ? "[OK]" : "Non"));
     }
 
     /**
@@ -168,8 +168,8 @@ public class Hotel {
     public void setPrixParNuit(double prixParNuit) { this.prixParNuit = prixParNuit; }
     public int getNombreEtoiles() { return nombreEtoiles; }
     public void setNombreEtoiles(int nombreEtoiles) { this.nombreEtoiles = nombreEtoiles; }
-    public boolean isPartenaireHayet() { return partenaireHayet; }
-    public void setPartenaireHayet(boolean partenaireHayet) { this.partenaireHayet = partenaireHayet; }
+    public boolean isPartenaireYinPulse() { return partenaireYinPulse; }
+    public void setPartenaireYinPulse(boolean partenaireYinPulse) { this.partenaireYinPulse = partenaireYinPulse; }
     public boolean isMenuPostOperatoire() { return menuPostOperatoire; }
     public void setMenuPostOperatoire(boolean menuPostOperatoire) { this.menuPostOperatoire = menuPostOperatoire; }
     public boolean isAccesPlage() { return accesPlage; }

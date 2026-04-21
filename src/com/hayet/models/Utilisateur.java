@@ -1,4 +1,4 @@
-package com.hayet.models;
+package com.YinPulse.models;
 
 /**
  * Classe Utilisateur - Authentification & Inscription

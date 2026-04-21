@@ -1,10 +1,10 @@
-@startuml DS_Hayet_Sprint2
+@startuml DS_YinPulse_Sprint2
 !theme plain
 skinparam sequenceArrowThickness 1.5
 skinparam defaultFontName Arial
 skinparam defaultFontSize 11
 
-title DS Sprint 2 — Scénario Complet : Réservation → Consultation → Notation → Admin\nHayet — Plateforme de Tourisme Médical
+title DS Sprint 2 — Scénario Complet : Réservation → Consultation → Notation → Admin\nYinPulse — Plateforme de Tourisme Médical
 
 actor "Patient" as P
 participant "Utilisateur" as U
