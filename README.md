@@ -1,4 +1,4 @@
-# soulbloom — Plateforme de Tourisme Médical & Bien-être
+# YinPulse — Plateforme de Tourisme Médical & Bien-être
 
 > Projet AGL 2025/2026 — FSEGT, Université Tunis El Manar  
 > Enseignante : Fatma Karray | Sprint 1 + Sprint 2
@@ -7,7 +7,7 @@
 
 ## Pitch
 
-**soulbloom** est une plateforme tunisienne de tourisme médical et de bien-être regenerative.  
+**YinPulse** est une plateforme tunisienne de tourisme médical et de bien-être regenerative.  
 Elle met en relation des patients internationaux avec des chirurgiens tunisiens spécialisés en reconstruction post-accident, chirurgie bariatrique et greffe capillaire, tout en proposant des retraites de récupération (Hammamet, Ain Draham, Tozeur).
 
 **Problème résolu :** Trouver un chirurgien qualifié en Tunisie, organiser son séjour médical et sa retraite de convalescence — sans jongler entre 10 intermédiaires.  
