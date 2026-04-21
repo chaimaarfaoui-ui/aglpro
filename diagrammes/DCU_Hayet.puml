@@ -1,0 +1,91 @@
+@startuml DCU_Hayet
+!theme plain
+skinparam actorStyle awesome
+skinparam packageStyle rectangle
+skinparam usecaseBorderColor #2c5f8a
+skinparam usecaseBackgroundColor #e8f0f7
+skinparam ArrowColor #2c5f8a
+skinparam ActorBorderColor #1a3a5c
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title Diagramme de Cas d'Utilisation — Hayet\nPlateforme de Tourisme Médical & Bien-être
+
+left to right direction
+
+actor "Visiteur" as V
+actor "Patient" as P
+actor "Médecin" as M
+actor "Admin" as A
+
+P --|> V
+A --|> P
+
+rectangle "Hayet — Système" {
+
+  ' Visiteur
+  usecase "US-00 : Consulter l'accueil" as UC00
+  usecase "US-03 : Rechercher un service" as UC03
+  usecase "US-04 : Filtrer les services" as UC04
+  usecase "US-11 : Consulter un profil médecin" as UC11
+  usecase "US-12 : Consulter les retraites" as UC12
+
+  ' Patient (hérite de Visiteur)
+  usecase "US-01 : S'inscrire" as UC01
+  usecase "US-02 : Se connecter" as UC02
+  usecase "US-13 : Se déconnecter" as UC13
+  usecase "US-05 : Afficher son profil" as UC05
+  usecase "US-06 : Modifier mot de passe" as UC06
+  usecase "US-14 : Prendre un rendez-vous" as UC14
+  usecase "US-15 : Payer une consultation" as UC15
+  usecase "US-07 : Soumettre un avis" as UC07
+  usecase "US-08 : Consulter ses avis" as UC08
+
+  ' Médecin
+  usecase "US-M1 : Consulter son profil" as UCM1
+  usecase "US-M2 : Mettre à jour son profil" as UCM2
+  usecase "US-M3 : Gérer ses disponibilités" as UCM3
+
+  ' Admin (hérite de Patient)
+  usecase "US-09 : Afficher tableau de bord" as UC09
+  usecase "US-10 : Gérer les médecins" as UC10
+  usecase "US-16 : Valider / Rejeter un avis" as UC16
+  usecase "US-17 : Gérer les services" as UC17
+  usecase "US-18 : Consulter les statistiques" as UC18
+
+  ' Relations include/extend
+  UC14 ..> UC02 : <<include>>
+  UC07 ..> UC14 : <<include>>
+  UC15 ..> UC14 : <<include>>
+  UC10 ..> UCM2 : <<extend>>
+  UC04 ..> UC03 : <<extend>>
+  UC18 ..> UC09 : <<include>>
+}
+
+V -- UC00
+V -- UC03
+V -- UC04
+V -- UC11
+V -- UC12
+
+P -- UC01
+P -- UC02
+P -- UC13
+P -- UC05
+P -- UC06
+P -- UC14
+P -- UC15
+P -- UC07
+P -- UC08
+
+M -- UCM1
+M -- UCM2
+M -- UCM3
+
+A -- UC09
+A -- UC10
+A -- UC16
+A -- UC17
+A -- UC18
+
+@enduml

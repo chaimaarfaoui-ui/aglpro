@@ -1,0 +1,87 @@
+@startuml DS_Hayet_Sprint2
+!theme plain
+skinparam sequenceArrowThickness 1.5
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title DS Sprint 2 — Scénario Complet : Réservation → Consultation → Notation → Admin\nHayet — Plateforme de Tourisme Médical
+
+actor "Patient" as P
+participant "Utilisateur" as U
+participant "Consultation" as C
+participant "Medecin" as M
+participant "Avis" as AV
+participant "Admin" as A
+participant "Service" as S
+
+P -> U : seConnecter(email, mdp)
+activate U
+  U -> U : estConnecte = true
+  U --> P : "Connexion réussie"
+deactivate U
+
+P -> C : new Consultation(idPatient, idMedecin, idService, date, heure, montant, motif)
+activate C
+  C -> C : statut = "EN_ATTENTE"
+  P -> C : confirmer()
+  C -> C : statut = "CONFIRMEE"
+  C --> P : "Consultation confirmée"
+deactivate C
+
+note over C : La consultation a lieu
+
+P -> C : terminer()
+activate C
+  C -> C : statut = "TERMINEE"
+  C --> P : "Paiement : 1400 DT"
+deactivate C
+
+P -> M : incrementerConsultations()
+activate M
+  M -> M : nombreConsultations++
+deactivate M
+
+A -> A : enregistrerRevenu(1400.0)
+activate A
+  A -> A : revenuJournalier += 1400.0
+deactivate A
+
+P -> AV : soumettre(5, "Chirurgien exceptionnel...")
+activate AV
+  alt note < 1 ou note > 5
+    AV --> P : false — "Note invalide"
+  else commentaire trop court
+    AV --> P : false — "Commentaire trop court"
+  else valide
+    AV -> AV : note = 5, dateAvis = aujourd'hui
+    AV --> P : true — "Avis soumis, en attente validation"
+  end
+deactivate AV
+
+A -> A : setNombreAvisEnAttente(+1)
+
+A -> AV : validerAvis(avis)
+activate A
+  AV -> AV : valide = true
+  A -> A : nombreAvisEnAttente--
+  A --> A : "Avis #1 validé"
+deactivate A
+
+M -> M : mettreAJourNote(5.0)
+activate M
+  M -> M : recalculer noteMoyenne
+  M --> M : noteMoyenne = 4.8
+deactivate M
+
+S -> S : mettreAJourNote(5.0)
+activate S
+  S -> S : recalculer noteMoyenne
+deactivate S
+
+P -> A : (consulte le tableau de bord)
+A -> A : afficherTableauDeBord()
+activate A
+  A --> P : utilisateurs=2, médecins=3, services=5,\navisEnAttente=0, revenu=3000 DT
+deactivate A
+
+@enduml

@@ -1,0 +1,50 @@
+@startuml DS_Hayet_Sprint1
+!theme plain
+skinparam sequenceArrowThickness 1.5
+skinparam sequenceBoxBorderColor #2c5f8a
+skinparam sequenceLifeLineBorderColor #2c5f8a
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title DS Sprint 1 — Scénario Principal : Inscription & Recherche de Service\nHayet — Plateforme de Tourisme Médical
+
+actor "Patient" as P
+participant "Utilisateur" as U
+participant "Service" as S
+
+P -> U : sInscrire(nom, prenom, email, mdp, tel)
+activate U
+  alt email invalide ou mdp trop court
+    U --> P : false + message erreur
+  else données valides
+    U -> U : role = "PATIENT"
+    U -> U : dateInscription = aujourd'hui
+    U --> P : true — "Compte créé"
+  end
+deactivate U
+
+P -> U : seConnecter(email, mdp)
+activate U
+  alt email/mdp corrects
+    U -> U : estConnecte = true
+    U --> P : true — "Bienvenue Fatma"
+  else
+    U --> P : false — "Email ou mdp incorrect"
+  end
+deactivate U
+
+P -> S : correspondARecherche("reconstruction")
+activate S
+  S -> S : comparer avec nom, catégorie, description, localisation
+  S --> P : true / false
+deactivate S
+
+P -> S : filtrerCombine("Tunis", null, 2000.0)
+activate S
+  S -> S : filtrerParLocalisation("Tunis")
+  S -> S : filtrerParPrixMax(2000.0)
+  S -> S : vérifier disponible == true
+  S --> P : true — service affiché
+deactivate S
+
+@enduml

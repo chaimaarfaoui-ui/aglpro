@@ -1,0 +1,175 @@
+@startuml DC_Hayet
+!theme plain
+skinparam classBackgroundColor #f0f5fa
+skinparam classBorderColor #2c5f8a
+skinparam classFontStyle bold
+skinparam ArrowColor #1a3a5c
+skinparam defaultFontName Arial
+skinparam defaultFontSize 11
+
+title Diagramme de Classes — Hayet\nPlateforme de Tourisme Médical & Bien-être
+
+' ─── Utilisateur (Chaima) ───────────────────────────────────────
+class Utilisateur {
+  - id : int
+  - nom : String
+  - prenom : String
+  - email : String
+  - motDePasse : String
+  - telephone : String
+  - role : String
+  - estConnecte : boolean
+  - dateInscription : String
+  --
+  + Utilisateur()
+  + Utilisateur(id, nom, prenom, email, mdp, tel, role, date)
+  + sInscrire(nom, prenom, email, mdp, tel) : boolean
+  + seConnecter(email, mdp) : boolean
+  + seDeconnecter() : void
+  + modifierMotDePasse(ancienMdp, nouveauMdp) : boolean
+  + afficherDetails() : void
+  + getId() : int
+  + getEmail() : String
+  + getRole() : String
+  + isEstConnecte() : boolean
+}
+
+' ─── Admin (Maram) — hérite de Utilisateur ──────────────────────
+class Admin {
+  - niveauAcces : int
+  - nombreUtilisateurs : int
+  - nombreMedecins : int
+  - nombreServices : int
+  - nombreAvisEnAttente : int
+  - revenuJournalier : double
+  - derniereConnexion : String
+  --
+  + Admin()
+  + Admin(id, nom, prenom, email, mdp, tel, niveau)
+  + afficherTableauDeBord() : void
+  + ajouterMedecin(medecin : Medecin) : void
+  + supprimerMedecin(medecin : Medecin) : void
+  + validerAvis(avis : Avis) : void
+  + rejeterAvis(avis : Avis, motif) : void
+  + ajouterService(service : Service) : void
+  + enregistrerRevenu(montant : double) : void
+  + getRevenuJournalier() : double
+}
+
+' ─── Service (Farah) ────────────────────────────────────────────
+class Service {
+  - id : int
+  - nom : String
+  - categorie : String
+  - description : String
+  - prix : double
+  - localisation : String
+  - adresse : String
+  - disponible : boolean
+  - noteMoyenne : double
+  - nombreAvis : int
+  --
+  + Service()
+  + Service(id, nom, categorie, desc, prix, loc, adresse)
+  + correspondARecherche(motCle : String) : boolean
+  + filtrerParCategorie(categorie : String) : boolean
+  + filtrerParLocalisation(localisation : String) : boolean
+  + filtrerParPrixMax(prixMax : double) : boolean
+  + filtrerCombine(loc, cat, prixMax) : boolean
+  + mettreAJourNote(note : double) : void
+  + afficherDetails() : void
+}
+
+' ─── Medecin (Malek) ────────────────────────────────────────────
+class Medecin {
+  - id : int
+  - nom : String
+  - prenom : String
+  - specialite : String
+  - email : String
+  - telephone : String
+  - adresseCabinet : String
+  - gouvernorat : String
+  - tarifConsultation : double
+  - anneesExperience : int
+  - diplome : String
+  - actif : boolean
+  - noteMoyenne : double
+  - nombreConsultations : int
+  --
+  + Medecin()
+  + Medecin(id, nom, prenom, spec, email, tel, adr, gouv, tarif, exp, diplome)
+  + afficherProfil() : void
+  + mettreAJourProfil(tel, adr, tarif) : void
+  + incrementerConsultations() : void
+  + mettreAJourNote(note : double) : void
+  + desactiver() : void
+  + estDans(gouvernorat : String) : boolean
+  + afficherDetails() : void
+}
+
+' ─── Avis (Eya) ─────────────────────────────────────────────────
+class Avis {
+  - id : int
+  - idUtilisateur : int
+  - nomUtilisateur : String
+  - idMedecin : int
+  - nomMedecin : String
+  - idService : int
+  - note : int
+  - commentaire : String
+  - dateAvis : String
+  - valide : boolean
+  - reponseAdmin : String
+  --
+  + Avis()
+  + Avis(id, idUtil, nomUtil, idMed, nomMed, idSvc, note, com, date)
+  + soumettre(note : int, commentaire : String) : boolean
+  + valider() : void
+  + rejeter(motif : String) : void
+  + repondre(reponse : String) : void
+  + appartientA(idUtilisateur : int) : boolean
+  + afficherDetails() : void
+}
+
+' ─── Consultation (commune) ─────────────────────────────────────
+class Consultation {
+  - id : int
+  - idPatient : int
+  - nomPatient : String
+  - idMedecin : int
+  - nomMedecin : String
+  - idService : int
+  - dateConsultation : String
+  - heureConsultation : String
+  - statut : String
+  - montantPaye : double
+  - motif : String
+  - avisLaisse : boolean
+  --
+  + Consultation()
+  + Consultation(id, idPat, nomPat, idMed, nomMed, idSvc, date, heure, montant, motif)
+  + confirmer() : void
+  + annuler(raison : String) : void
+  + terminer() : void
+  + marquerAvisLaisse() : void
+  + peutEtreNotee() : boolean
+  + afficherDetails() : void
+}
+
+' ─── Relations ──────────────────────────────────────────────────
+Admin --|> Utilisateur : hérite
+
+Utilisateur "1" --> "0..*" Consultation : passe
+Medecin "1" --> "0..*" Consultation : reçoit
+Service "1" --> "0..*" Consultation : concerne
+
+Consultation "1" --> "0..1" Avis : génère
+Utilisateur "1" --> "0..*" Avis : soumet
+Medecin "1" --> "0..*" Avis : reçoit
+
+Admin "1" --> "0..*" Medecin : gère
+Admin "1" --> "0..*" Service : gère
+Admin "1" --> "0..*" Avis : modère
+
+@enduml
