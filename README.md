@@ -1,4 +1,4 @@
-# Hayet — Plateforme de Tourisme Médical & Bien-être
+# soulbloom — Plateforme de Tourisme Médical & Bien-être
 
 > Projet AGL 2025/2026 — FSEGT, Université Tunis El Manar  
 > Enseignante : Fatma Karray | Sprint 1 + Sprint 2
