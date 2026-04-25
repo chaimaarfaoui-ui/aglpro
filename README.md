@@ -13,7 +13,7 @@ Elle met en relation des patients internationaux avec des chirurgiens tunisiens 
 **Problème résolu :** Trouver un chirurgien qualifié en Tunisie, organiser son séjour médical et sa retraite de convalescence — sans jongler entre 10 intermédiaires.  
 **Cible :** Patients européens & tunisiens, Médecins spécialistes, Administrateurs de la plateforme.
 
-**Inspiration :** [YinPulsejdida.vercel.app](https://YinPulsejdida.vercel.app)
+**Inspiration :** [hayetjdida.vercel.app](https://hayetjdida.vercel.app)
 
 ---
 
