@@ -104,10 +104,11 @@ java -cp out com.YinPulse.models.Main
 
 ## Lien Figma
 
-> [À compléter — lien Figma partageable après création des maquettes]
+>  (https://www.figma.com/make/gvJLKPRqJPXKhwzvkAdjWZ/Design-Yinflow-App-Branding?fullscreen=1&t=2PFwEmOx8Zi4NI7J-1)
 
 ---
-
+## lien Jira 
+> https://chawisp.atlassian.net/jira/software/projects/YIN/summary?atlOrigin=eyJpIjoiNzc5YWI4ZDVmMGMzNDJiNDgxNGI3ZDU5NTA2YjhkZjgiLCJwIjoiaiJ9
 ## Branches Git attendues
 
 ```
