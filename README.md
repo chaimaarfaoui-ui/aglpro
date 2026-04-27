@@ -46,7 +46,6 @@ YinPulse/
 ├── docs/
 │   ├── rapport.pdf              ← Rapport final (L7)
 │   └── captures/
-│       ├── maquettes/           ← Exports Figma
 │       ├── kanban/              ← Captures Kanban
 │       └── reviews/             ← Captures PR reviews
 ├── diagrammes/
